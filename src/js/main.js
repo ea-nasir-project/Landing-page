@@ -1,7 +1,5 @@
-// Import our custom CSS
+import '../bootstrap/bootstrap-reboot.css';
+import '../bootstrap/bootstrap-grid.css';
 import '../scss/custom.scss';
 
-import * as bootstrap from 'bootstrap';
-
-// Import custom JS modules
 import './custom.js';

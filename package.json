@@ -12,11 +12,10 @@
   },
   "packageManager": "yarn@4.6.0",
   "dependencies": {
-    "@popperjs/core": "^2.11.8",
-    "bootstrap": "^5.3.8"
+    "@popperjs/core": "^2.11.8"
   },
   "devDependencies": {
-    "sass": "^1.93.0",
+    "sass": "^1.93.3",
     "vite": "^7.1.6"
   }
 }

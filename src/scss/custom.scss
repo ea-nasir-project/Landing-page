@@ -1,179 +1,116 @@
-/******* Customized Bootstrap ********/
+$font-family-base: "Lexand", sans-serif;
+$font-family-headings: "Instrument Sans", sans-serif;
+$font-family-nav: "Open Sans", sans-serif;
+
+$text-color-heading: #064e3b;
+$text-color-subheading: #064e3b;
+$text-color-heading-h2: #064e3bb3;
+$text-color-header-nav: #064e3bbf;
+$text-color-header-nav-hoover: #064e3b;
+$text-color-brand: #0EA47A;
+$text-color-brand-e: #136F8A;
+$text-color-footer: #fff;
+$text-color-footer-h6: #ffffffe0;
+
+$bg-color: #E9F7F2;
+$bg-color-odd: #f7f7f7;
+$bg-color-tag: #DDEEE9;
+$bg-color-footer: #064e3b;
+
+$icon-color: #34d399;
 
 $primary: #0A7D24;
 $secondary: #3b443f;
 $light: #E6F0EF;
-$dark: #03201F;
+$dark: #03200a;
 
-$headings-font-family: "Lexend Deca", sans-serif;
-$font-family-base: 'Inter', sans-serif;
+body {
+  font-family: $font-family-base;
+  background-color: $bg-color;
 
-$body-color: $secondary;
-$headings-color: $dark;
-$headings-font-weight: 400;
-$display-font-weight: 400;
-$enable-responsive-font-sizes: true;
-
-$border-radius: 0px;
-
-$border-radius-sm: $border-radius;
-
-$border-radius-lg: $border-radius;
-
-$link-decoration: none;
-
-$enable-negative-margins: true;
-
-@import "bootstrap/scss/bootstrap";
-
-@import "../bootstrap/scss/styles";
-
-// === Brand Colors ===
-$c-brand-green-dark: #0A7D24; // Main brand green - sustainability, CTA
-$c-brand-green-turquoise: #1FB07A; // Secondary accent - renewal, hover
-$c-brand-blue-medium: #0092B8; // Technology, links, secondary titles
-
-// === Optional Dark Background ===
-$c-bg-green-graphite: #0D1B18; // Deep greenish-black, footer/contrast
-
-.btn {
-  background-color: $c-brand-green-dark;
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-// Header/Nav custom styles
-.navbar {
-  font-family: 'Lexend Deca', 'Inter', 'Poppins', sans-serif;
-  font-weight: 600;
-  letter-spacing: 0.5px;
-  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.95) 10%, rgba(255, 255, 255, 0.0) 100%);
-  box-shadow: 0 2px 16px 0 rgba(0, 0, 0, 0.04);
-  transition: background 0.3s, box-shadow 0.3s;
-}
-
-.navbar .navbar-brand {
-  font-weight: 700;
-  font-size: 1.6rem;
-  color: $c-brand-green-dark;
-  letter-spacing: 1px;
-}
-
-.navbar-nav .nav-link {
-  font-family: 'Inter', 'Poppins', sans-serif;
-  font-weight: 500;
-  font-size: 1.08rem;
-  color: $dark;
-  margin-right: 0.5rem;
-  padding: 0.5rem 1rem;
-  border-radius: 4px;
-  transition: background 0.2s, color 0.2s;
-}
-
-.navbar-nav .nav-link.active,
-.navbar-nav .nav-link:hover {
-  background: $c-brand-green-dark;
-  color: #fff !important;
-}
-
-.navbar .btn-success {
-  font-family: 'Poppins', 'Inter', sans-serif;
-  font-weight: 600;
-  font-size: 1.08rem;
-  background: $c-brand-green-dark;
-  border-radius: 4px;
-  box-shadow: 0 2px 8px 0 rgba(10, 125, 36, 0.08);
-  border: none;
-  padding: 0.5rem 1.2rem;
-}
-
-// Cards custom styles
-$card-shadow-base: rgba(0, 0, 0);
-$card-shadow-green: rgba(10, 125, 36, 0.5);
-$card-shadow-hover-base: rgba(0, 0, 0, 0.35);
-$card-shadow-hover-green: rgba(10, 125, 36, 0.7);
-
-.card {
-  border: none; // mantém sem borda
-  border-radius: 16px;
-  background: #fff;
-  overflow: hidden;
-  min-height: 260px;
-  box-shadow:
-    0 4px 12px $card-shadow-base,
-    0 6px 20px $card-shadow-green;
-  transition: box-shadow 0.2s, transform 0.2s;
-
-  &:hover {
-    box-shadow:
-      0 6px 20px $card-shadow-hover-base,
-      0 10px 32px $card-shadow-hover-green;
-    transform: translateY(-4px) scale(1.03);
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: $font-family-headings;
+    color: $text-color-heading;
   }
 }
 
-.card-body {
-  padding: 2rem 1.2rem 1.2rem 1.2rem;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
+.brand-highlight {
+  color: $text-color-brand;
 }
 
-.card-title {
-  font-family: 'Lexend Deca', 'Inter', 'Poppins', sans-serif;
-  font-weight: 700;
-  font-size: 1.18rem;
-  color: $c-brand-green-dark;
-  margin-bottom: 0.7rem;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
+.toogle-nav {
+  background-color: transparent;
+  border: none;
+
+  .toogle-nav-icon {
+    width: 2rem;
+    height: 2rem;
+    color: $icon-color;
+    vertical-align: middle;
+    flex: none;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    cursor: pointer;
+  }
+
+  &:hover .toggle-nav-icon {
+    transform: rotate(90deg);
+    background-color: red;
+  }
 }
 
-.card-text {
-  font-family: 'Inter', 'Poppins', sans-serif;
-  font-size: 1rem;
-  color: $secondary;
-  margin-bottom: 0.2rem;
-}
-
-// Sessão futuro-sustentavel refinada
-.futuro-sustentavel {
-  background: linear-gradient(120deg, #E6F0EF 60%, #fff 100%);
-  box-shadow: 0 4px 32px 0 rgba(10, 125, 36, 0.07);
-  border-radius: 1.5rem;
-  // padding: 3rem 2rem;
-  margin-bottom: 2rem;
-}
-
-.futuro-sustentavel__content {
-  margin-bottom: 1.2rem;
-  background: rgba(255, 255, 255, 0.7);
+.btn {
+  padding: 1em 1.5em;
+  grid-column-gap: .5em;
+  grid-row-gap: .5em;
+  border: 0px solid transparent;
   border-radius: 0.5rem;
-  padding: 0.5rem 1rem;
-  box-shadow: 0 1px 6px 0 rgba(10, 125, 36, 0.04);
+  background-color: #34d399;
+  font-family: $font-family-headings;
+  color: #000000dc;
+  font-size: 1rem;
+  text-align: center;
+  cursor: pointer;
+  background-image: radial-gradient(circle farthest-side at 50% -50%, #ffffff80, #0000);
+  justify-content: center;
+  align-items: center;
+  font-weight: 100;
+  line-height: 1.2;
+  text-decoration: none;
+  transition: border-color .2s, color .2s, background-color .2s cubic-bezier(.165, .84, .44, 1), box-shadow .2s;
+  display: inline-flex;
+  box-shadow: 0 4px 4px #0003, 0 1px 1px #0003, inset 0 0 0 1px #0000001a, inset 0 3px 2px -2px #ffffff80;
+
+  &:hover {
+    border-color: transparent;
+    background-color: #66deb2;
+    color: #000000dc;
+    box-shadow: 0 6px 12px #0003, 0 1px 1px #0003, inset 0 0 0 1px #0000001a, inset 0 3px 2px -2px #ffffff80;
+  }
+
+  &:focus {
+    outline-color: #34d399;
+    outline-offset: 2px;
+    outline-width: 2px;
+    outline-style: solid;
+  }
 }
 
-.futuro-sustentavel__title {
-  text-shadow: 0 2px 12px #cbeed6;
-  letter-spacing: 1px;
-  font-family: 'Lexend Deca', 'Inter', 'Poppins', sans-serif;
+footer {
+  color: $text-color-footer;
+  background-color: $bg-color-footer;
 
-  margin-bottom: 2rem;
-}
+  .footer-rights {
+    text-align: center;
+  }
 
-.futuro-sustentavel__lead {
-  font-size: 1.25rem;
-  color: $secondary;
-  font-family: 'Inter', 'Poppins', sans-serif;
-}
-
-.futuro-sustentavel__text {
-  font-size: 1.08rem;
-  color: $secondary;
-  font-family: 'Inter', 'Poppins', sans-serif;
+  .footer-heading {
+    color: $text-color-footer-h6;
+  }
 }
