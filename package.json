@@ -12,7 +12,8 @@
   },
   "packageManager": "yarn@4.6.0",
   "dependencies": {
-    "@popperjs/core": "^2.11.8"
+    "@popperjs/core": "^2.11.8",
+    "leaflet": "^1.9.4"
   },
   "devDependencies": {
     "sass": "^1.93.3",

@@ -12,7 +12,6 @@
     rel="stylesheet">
 
   <title>e-renova</title>
-  <script type="module" src="./js/main.js"></script>
   <style>
     @keyframes spin {
       to {
@@ -25,7 +24,7 @@
 <body>
 
   <div id="preloader"
-    style="position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:#fff;z-index:9999;">
+    style="position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:#fff;z-index:9;">
     <div
       style="width:3rem;height:3rem;border:0.5rem solid #fff;border-top-color:#0A7D24;border-radius:50%;animation:spin 1s linear infinite;">
     </div>
@@ -260,9 +259,22 @@
     </div>
   </section>
 
-  <section id="map">
+  <section class="map">
     <div class="container">
       <h2>Seja um parceiro <span class="brand-highlight">e-renova</span></h2>
+      <p>
+        Junte-se à nossa rede de parceiros comprometidos com um futuro mais sustentável.
+      </p>
+      <p>
+        Como ponto de coleta e-renova, você
+        facilita o descarte consciente de eletrônicos na sua região, ajudando a transformar lixo eletrônico em
+        oportunidades de
+        reciclagem.
+      </p>
+      <p>Localize o parceiro mais próximo no mapa para realizar seu descarte ou entre em contato e torne-se um ponto de
+        coleta <span class="brand-highlight">e-renova</span>.</p>
+
+      <div id="map"></div>
     </div>
   </section>
 
@@ -271,9 +283,9 @@
 
       <div class="row pt-4 pb-3">
 
-          <div class="col-md-6 footer-brand d-flex justify-content-center align-items-center">
-            <img src="./images/renova-white.svg" alt="E-Renova logo" class="footer-logo">
-          </div>
+        <div class="col-md-6 footer-brand d-flex justify-content-center align-items-center">
+          <img src="./images/renova-white.svg" alt="E-Renova logo" class="footer-logo">
+        </div>
 
         <div class="col-md-3 footer-links pt-2">
           <h6 class="footer-heading">Institucional</h6>
@@ -299,7 +311,7 @@
     </div>
 
     <div class="container footer-rights py-3">
-      <p class="mb-0">&copy; 2025 E-Renova. Todos os direitos reservados.</p>
+      <p class="mb-0">&copy; 2025 e-renova. Todos os direitos reservados.</p>
     </div>
   </footer>
 
@@ -313,7 +325,6 @@
   </a>
 
   <script>
-    // Preloader hide on load
     window.addEventListener('load', () => {
       const preloader = document.getElementById('preloader');
       preloader.style.opacity = '0';
@@ -321,6 +332,8 @@
       preloader.addEventListener('transitionend', () => preloader.remove(), { once: true });
     });
   </script>
+
+  <script type="module" src="./js/main.js"></script>
 </body>
 
 </html>
