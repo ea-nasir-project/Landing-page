@@ -31,6 +31,26 @@ if (toggleNavBtn && navbar) {
   });
 }
 
+document.addEventListener('DOMContentLoaded', function () {
+  const faqButtons = document.querySelectorAll('.faq-question');
+
+  faqButtons.forEach(btn => {
+    btn.addEventListener('click', function () {
+      const item = btn.closest('.faq-item');
+      const answer = item.querySelector('.faq-answer');
+      const isOpen = item.classList.toggle('open');
+      btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+
+      // manage max-height for smooth transition using content height
+      if (isOpen) {
+        answer.style.maxHeight = answer.scrollHeight + 'px';
+      } else {
+        answer.style.maxHeight = null;
+      }
+    });
+  });
+});
+
 // Back to Top Button
 const backToTopBtn = document.querySelector('[data-btn="back-to-top"]');
 
