@@ -30,6 +30,10 @@ $space-sm: 1.5rem; // 24px
 $header-height: 4rem; // estimated header height to offset absolute header
 
 
+.brand-highlight {
+  color: lighten($text-color-brand, 15%);
+}
+
 
 body {
   font-family: $font-family-base;
@@ -599,6 +603,90 @@ header {
   .col-12 {
     padding-left: 0.75rem;
     padding-right: 0.75rem;
+  }
+}
+
+.about-section {
+  .about-problem {
+    background: #ffffff;
+    border-radius: 1rem;
+    padding: $space-md;
+    box-shadow: 0 8px 24px rgba(2, 6, 23, 0.08);
+    
+    .problem-stat {
+      text-align: center;
+      margin-bottom: $space-sm;
+      
+      .stat-number {
+        font-size: 3.5rem;
+        font-weight: 700;
+        color: $text-color-brand;
+        line-height: 1;
+        display: block;
+      }
+      
+      .stat-label {
+        font-size: 1.25rem;
+        color: rgba($text-color-body, 0.75);
+      }
+    }
+
+    .lead {
+      font-size: 1.25rem;
+      margin-bottom: $space-sm;
+    }
+
+    .alert-text {
+      border-left: 4px solid $text-color-brand;
+      padding-left: 1rem;
+      font-weight: 500;
+      color: rgba($text-color-body, 0.9);
+    }
+  }
+
+  .solution-intro {
+    .lead {
+      font-size: 1.5rem;
+      font-weight: 500;
+    }
+  }
+
+  .solution-card {
+    background: #ffffff;
+    border-radius: 1rem;
+    padding: $space-md;
+    height: 100%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 24px rgba(2, 6, 23, 0.08);
+    }
+
+    .solution-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 48px;
+      height: 48px;
+      background: rgba($icon-color, 0.1);
+      border-radius: 50%;
+      margin-bottom: 1rem;
+      color: $icon-color;
+    }
+
+    h3 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      color: $text-color-heading;
+    }
+
+    p {
+      color: rgba($text-color-body, 0.85);
+      margin-bottom: 0;
+    }
   }
 }
 
