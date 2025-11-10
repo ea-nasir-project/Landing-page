@@ -34,18 +34,34 @@ if (toggleNavBtn && navbar) {
 document.addEventListener('DOMContentLoaded', function () {
   const faqButtons = document.querySelectorAll('.faq-question');
 
+  function closeOtherItems(currentItem) {
+    faqButtons.forEach(otherBtn => {
+      const otherItem = otherBtn.closest('.faq-item');
+      const otherAnswer = otherItem.querySelector('.faq-answer');
+
+      if (otherItem !== currentItem && otherItem.classList.contains('open')) {
+        otherItem.classList.remove('open');
+        otherBtn.setAttribute('aria-expanded', 'false');
+        otherAnswer.style.maxHeight = null;
+      }
+    });
+  }
+
   faqButtons.forEach(btn => {
     btn.addEventListener('click', function () {
       const item = btn.closest('.faq-item');
       const answer = item.querySelector('.faq-answer');
-      const isOpen = item.classList.toggle('open');
+      const isOpen = !item.classList.contains('open');
+
+      closeOtherItems(item);
+
+      item.classList.toggle('open');
       btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
 
-      // manage max-height for smooth transition using content height
       if (isOpen) {
         answer.style.maxHeight = answer.scrollHeight + 'px';
       } else {
-        answer.style.maxHeight = null;
+        answer.style.maxHeight = '0px';
       }
     });
   });
