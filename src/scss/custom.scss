@@ -1,8 +1,9 @@
-$font-family-base: "Lexand", sans-serif;
-$font-family-headings: "Instrument Sans", sans-serif;
+$font-family-base: "Instrument Sans", sans-serif;
+$font-family-headings: "Lexend", sans-serif;
 $font-family-nav: "Open Sans", sans-serif;
 
 $text-color-heading: #064e3b;
+$text-color-body: #064e3b;
 $text-color-subheading: #064e3b;
 $text-color-heading-h2: #064e3bb3;
 $text-color-header-nav: #064e3bbf;
@@ -19,16 +20,24 @@ $bg-color-footer: #064e3b;
 
 $icon-color: #34d399;
 
-$primary: #0A7D24;
-$secondary: #3b443f;
-$light: #E6F0EF;
-$dark: #03200a;
+$text-size-footer: .8rem;
 
-$fontsize-footer: .8rem;
+
 
 body {
   font-family: $font-family-base;
   background-color: $bg-color;
+  font-size: 1.125rem; // 18px base
+  line-height: 1.5;
+  color: $text-color-body;
+
+  .navbar-nav {
+    font-family: $font-family-nav;
+  }
+
+  .footer {
+    font-family: $font-family-nav;
+  }
 
   h1,
   h2,
@@ -38,32 +47,63 @@ body {
   h6 {
     font-family: $font-family-headings;
     color: $text-color-heading;
+    line-height: 1.2;
   }
 
   h1 {
-    font-size: 5rem;
+    font-size: 5.625rem; // 90px
+  }
+
+  h2 {
+    font-size: 4rem; // 64px
+  }
+
+  h3 {
+    font-size: 3rem; // 48px
+  }
+
+  h4 {
+    font-size: 2.25rem; // 36px
+  }
+
+  h5 {
+    font-size: 1.5rem; // 24px
+  }
+
+  h6 {
+    font-size: 1.25rem; // 20px
   }
 
   section:nth-of-type(even) {
     background-color: $bg-color-section-even;
+    font-size: 1.125rem;
   }
-}
-
-.brand-highlight {
-  color: $text-color-brand;
 }
 
 // Header & Navbar Styles
 header {
   background-color: transparent;
   padding: 1rem 0;
-  position: relative;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
   z-index: 1000;
 }
 
 .navbar {
   font-family: $font-family-nav;
   padding: 0;
+
+  @media (min-width: 992px) {
+    .nav-link {
+      color: rgba(255, 255, 255, 0.75) !important;
+
+      &:hover {
+        color: #fff !important;
+      }
+    }
+  }
 
   .navbar-brand {
     padding: 0;
@@ -100,7 +140,7 @@ header {
 
     .nav-link {
       color: $text-color-header-nav;
-      font-size: 1rem;
+      font-size: 1.125rem; // 18px
       font-weight: 400;
       text-decoration: none;
       transition: color 0.2s ease;
@@ -142,13 +182,83 @@ header {
   }
 }
 
+// Hero Section Styles
+.hero-section {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+  }
+
+  .hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.6));
+    z-index: 1;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    padding-top: 6rem !important;
+
+    .hero-title {
+      color: rgba(255, 255, 255, 0.9);
+      margin-bottom: 1.5rem;
+      font-size: 3.75rem; // 60px para mobile
+
+      @media (min-width: 992px) {
+        font-size: 5.625rem; // 90px para desktop
+        font-weight: 400;
+      }
+    }
+
+    .lead {
+      color: rgba(255, 255, 255, 0.9);
+      font-size: 1.375rem; // 22px
+      margin-bottom: 2rem;
+    }
+
+    .brand-highlight {
+      color: lighten($text-color-brand, 15%);
+    }
+  }
+}
+
 // Mobile Menu Styles
 @media (max-width: 991.98px) {
   .navbar {
+    position: relative; // so the absolute .navbar-collapse is positioned under the header
+    font-size: 18px;
+
     .navbar-collapse {
       max-height: 0;
       overflow: hidden;
       transition: max-height 0.3s ease-out;
+
+      // restore white background for collapsed mobile menu
+      background-color: $bg-color;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      z-index: 9;
+      box-shadow: 0 6px 18px rgba(2, 6, 23, 0.12);
+      border-radius: 12px;
 
       &.show {
         max-height: 500px;
@@ -157,7 +267,7 @@ header {
     }
 
     .navbar-nav {
-      padding: 1rem 0;
+      padding: 1rem;
       gap: 0.5rem;
       flex-direction: column;
       align-items: stretch;
@@ -168,7 +278,8 @@ header {
         .nav-link {
           padding: 0.75rem 1rem;
           display: block;
-          border-bottom: 1px solid rgba(6, 78, 59, 0.1);
+          border-bottom: 1px solid rgba(6, 78, 59, 0.06);
+          color: $text-color-header-nav;
         }
 
         &:last-child .nav-link {
@@ -209,7 +320,8 @@ header {
         .nav-link {
           padding: 0.5rem 0;
           position: relative;
-          font-size: 1rem;
+          font-size: 1.125rem;
+          ;
           line-height: 1.5;
           display: inline-block;
 
@@ -256,13 +368,13 @@ header {
   background-color: #34d399;
   font-family: $font-family-headings;
   color: #000000dc;
-  font-size: 1rem;
+  font-size: 1.125rem; // 18px
   text-align: center;
   cursor: pointer;
   background-image: radial-gradient(circle farthest-side at 50% -50%, #ffffff80, #0000);
   justify-content: center;
   align-items: center;
-  font-weight: 100;
+  font-weight: 300;
   line-height: 1.2;
   text-decoration: none;
   transition: border-color .2s, color .2s, background-color .2s cubic-bezier(.165, .84, .44, 1), box-shadow .2s;
@@ -296,7 +408,7 @@ header {
     width: 64px;
     height: 64px;
     border-radius: 50%;
-    background-color: $primary;
+    background-color: $icon-color;
     color: white;
     display: flex;
     align-items: center;
@@ -312,7 +424,7 @@ header {
 
     &:hover {
       color: #ffffffd7;
-      background-color: darken($primary, 10%);
+      background-color: darken($icon-color, 10%);
       transform: translateY(-2px);
       box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2), 0 2px 6px rgba(0, 0, 0, 0.15);
     }
@@ -331,7 +443,7 @@ header {
 .footer {
   color: $text-color-footer;
   background-color: $bg-color-footer;
-  font-size: $fontsize-footer;
+  font-size: $text-size-footer;
 
   a {
     color: #f5f5f5;
