@@ -62,27 +62,27 @@ body {
   }
 
   h1 {
-    font-size: 5.625rem; // 90px
+    font-size: clamp(3.75rem, 4.5rem + 2vw, 5.625rem); // 60px -> 90px
   }
 
   h2 {
-    font-size: 4rem; // 64px
+    font-size: clamp(2.5rem, 2rem + 1.5vw, 4rem); // 40px -> 64px
   }
 
   h3 {
-    font-size: 3rem; // 48px
+    font-size: clamp(1.75rem, 1.25rem + 1.2vw, 3rem); // ~28px -> 48px
   }
 
   h4 {
-    font-size: 2.25rem; // 36px
+    font-size: clamp(1.25rem, 1rem + 0.8vw, 2.25rem); // ~20px -> 36px
   }
 
   h5 {
-    font-size: 1.5rem; // 24px
+    font-size: clamp(1rem, 0.9rem + 0.5vw, 1.5rem); // ~16px -> 24px
   }
 
   h6 {
-    font-size: 1.25rem; // 20px
+    font-size: clamp(0.9rem, 0.85rem + 0.4vw, 1.25rem); // ~14px -> 20px
   }
 
   section:nth-of-type(even) {
@@ -486,7 +486,7 @@ header {
       align-items: center;
       gap: 1rem;
       width: 100%;
-      padding: $space-md;
+      padding: 2rem;
       background: transparent;
       border: none;
       text-align: left;
