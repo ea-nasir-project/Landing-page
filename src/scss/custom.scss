@@ -22,6 +22,13 @@ $icon-color: #34d399;
 
 $text-size-footer: .8rem;
 
+// Spacing scale (based on 16px root):
+$space-xxl: 6rem; // 96px
+$space-lg: 4rem; // 64px
+$space-md: 2.5rem; // 40px
+$space-sm: 1.5rem; // 24px
+$header-height: 4rem; // estimated header height to offset absolute header
+
 
 
 body {
@@ -78,6 +85,15 @@ body {
     background-color: $bg-color-section-even;
     font-size: 1.125rem;
   }
+
+  section {
+    padding-top: $space-lg;
+    padding-bottom: $space-lg;
+  }
+
+  .hero-section {
+    padding-top: $space-xxl;
+  }
 }
 
 // Header & Navbar Styles
@@ -89,6 +105,7 @@ header {
   top: 0;
   left: 0;
   z-index: 1000;
+  min-height: 100vh;
 }
 
 .navbar {
@@ -214,7 +231,6 @@ header {
   .hero-content {
     position: relative;
     z-index: 2;
-    padding-top: 6rem !important;
 
     .hero-title {
       color: rgba(255, 255, 255, 0.9);
