@@ -58,11 +58,8 @@ document.addEventListener('DOMContentLoaded', function () {
       item.classList.toggle('open');
       btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
 
-      if (isOpen) {
-        answer.style.maxHeight = answer.scrollHeight + 'px';
-      } else {
-        answer.style.maxHeight = '0px';
-      }
+      // Remove any inline max-height to let CSS handle it
+      answer.style.maxHeight = '';
     });
   });
 });
