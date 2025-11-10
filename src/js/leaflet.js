@@ -1,10 +1,7 @@
 // importa Leaflet e seu CSS via bundler
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
-
-
-const partnerIconUrl = '/images/renova-pin.svg';
-
+import partnerIconUrl from '../images/renova-pin.svg';
 
 export function initMap() {
     const el = document.getElementById('map');
