@@ -552,22 +552,19 @@ header {
 }
 
 .features {
-  .row {
-    gap: $space-md;
-    justify-content: center;
-  }
-
   .card {
-    background: #ffffff;
+    height: 100%;
     border: none;
     border-radius: 1rem;
-    padding: $space-md;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
-    flex: 1;
-    min-width: 280px;
-    max-width: 320px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 
     &::before {
       content: '';
@@ -577,33 +574,49 @@ header {
       width: 100%;
       height: 4px;
       background: linear-gradient(to right, $text-color-brand, $icon-color);
+      z-index: 1;
     }
 
     &:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
+      transform: translateY(-4px);
+    }
+
+    .card-icon {
+      width: 56px;
+      height: 56px;
+      margin-top: 1.5rem;
+      padding: 0.75rem;
+      background: rgba($icon-color, 0.1);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: $icon-color;
+      flex-shrink: 0;
     }
 
     .card-body {
-      padding: 0;
+      padding: $space-sm;
+      width: 100%;
     }
 
     .card-title {
       color: $text-color-heading;
-      font-size: 1.5rem;
-      margin-bottom: $space-sm;
       font-weight: 600;
+      margin-bottom: 1rem;
+      font-size: 1.25rem;
     }
 
     .card-text {
       color: rgba($text-color-body, 0.85);
-      margin-bottom: 0;
-      font-size: 1.125rem;
-    }
+      font-size: 1rem;
+      line-height: 1.6;
+      margin: 0;
 
-    strong {
-      color: $text-color-brand;
-      font-weight: 600;
+      strong {
+        color: $text-color-brand;
+      }
     }
   }
 }
