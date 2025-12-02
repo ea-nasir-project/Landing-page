@@ -60,6 +60,13 @@
         <div class="row">
           <div class="col">
             <h2>Muito além do descarte, construindo um futuro sustentável</h2>
+            <button class="btn btn--green">Descarte voluntário</button>
+            <button class="btn btn--yellow">Residências e condomínios</button>
+            <button class="btn btn--purple">Lojistas e parceiros</button>
+            <button class="btn btn--blue">Empresas e indústrias</button>
+            <button class="btn btn--login">Login</button>
+
+
             <div class="overview__indicators">
               <div class="overview__indicator-item">
                 Mais de X parceiros ativos em todo o Brasil, entre empresas, escolas, condomínios e projetos sociais.
@@ -165,42 +172,58 @@
 
     <section class="customers">
       <div class="container">
-        <div class="row">
+        <div class="row mb-5">
           <div class="col">
             <h2>Processo simples, seguro e confiável para o descarte de eletrônicos</h2>
-            <div>
-              <div>
-                <h3>Descarte voluntário nos pontos de coleta</h3>
-                <p>Para quem quer descartar seus eletrônicos de forma segura nos pontos de coleta parceiros</p>
-                <button>Saiba mais</button>
-              </div>
-              <div><img src="images/individual.webp" alt=""></div>
-            </div>
-            <div>
-              <div>
-                <h3>Lojistas e parceiros</h3>
-                <p>Para quem quer enviar remessas pela plataforma e transformar eletrônicos parados em valor</p>
-                <button>Saiba mais</button>
-              </div>
-              <div><img src="images/shopkeeper.webp" alt=""></div>
-            </div>
-            <div>
-              <div>
-                <h3>Soluções para grandes volumes</h3>
-                <p>Para empresas, indústrias e organizações que precisam de logística reversa estruturada e coleta em
-                  volume</p>
-                <button>Saiba mais</button>
-              </div>
-              <div><img src="images/companies.webp" alt=""></div>
-            </div>
-            <div>
-              <div>
-                <h3>Instalação de composteiras residenciais</h3>
-                <p>Para quem deseja adotar práticas sustentáveis no dia a dia</p>
-                <button>Saiba mais</button>
-              </div>
-              <div><img src="images/composting.webp" alt=""></div>
-            </div>
+          </div>
+        </div>
+
+        <!-- Item 1: Text Left, Image Right -->
+        <div class="row align-items-center mb-5">
+          <div class="col-md-6 order-2 order-md-1">
+            <h3>Descarte voluntário nos pontos de coleta</h3>
+            <p>Para quem quer descartar seus eletrônicos de forma segura nos pontos de coleta parceiros</p>
+            <button class="btn btn--green">Saiba mais</button>
+          </div>
+          <div class="col-md-6 order-1 order-md-2 mb-4 mb-md-0 img-wrapper">
+            <img src="images/individual.webp" alt="Descarte voluntário">
+          </div>
+        </div>
+
+        <!-- Item 2: Image Left, Text Right -->
+        <div class="row align-items-center mb-5">
+          <div class="col-md-6 order-1 mb-4 mb-md-0 img-wrapper">
+            <img src="images/shopkeeper.webp" alt="Lojistas e parceiros">
+          </div>
+          <div class="col-md-6 order-2">
+            <h3>Lojistas e parceiros</h3>
+            <p>Para quem quer enviar remessas pela plataforma e transformar eletrônicos parados em valor</p>
+            <button class="btn btn--purple">Saiba mais</button>
+          </div>
+        </div>
+
+        <!-- Item 3: Text Left, Image Right -->
+        <div class="row align-items-center mb-5">
+          <div class="col-md-6 order-2 order-md-1">
+            <h3>Soluções para grandes volumes</h3>
+            <p>Para empresas, indústrias e organizações que precisam de logística reversa estruturada e coleta em
+              volume</p>
+            <button class="btn btn--blue">Saiba mais</button>
+          </div>
+          <div class="col-md-6 order-1 order-md-2 mb-4 mb-md-0 img-wrapper">
+            <img src="images/companies.webp" alt="Soluções para grandes volumes">
+          </div>
+        </div>
+
+        <!-- Item 4: Image Left, Text Right -->
+        <div class="row align-items-center">
+          <div class="col-md-6 order-1 mb-4 mb-md-0 img-wrapper">
+            <img src="images/composting.webp" alt="Instalação de composteiras residenciais">
+          </div>
+          <div class="col-md-6 order-2">
+            <h3>Instalação de composteiras residenciais</h3>
+            <p>Para quem deseja adotar práticas sustentáveis no dia a dia</p>
+            <button class="btn btn--yellow">Saiba mais</button>
           </div>
         </div>
       </div>
@@ -219,7 +242,6 @@
                 <h3>Como a reciclagem de eletrônicos pode beneficiar sua empresa</h3>
                 <p>Conheça os benefícios da reciclagem de eletrônicos para sua empresa e como ela pode contribuir para a
                   preservação do meio ambiente.</p>
-                <button>Saiba mais</button>
               </div>
               <div class="blog__item">
                 <div class="blog__item-img">
@@ -230,7 +252,6 @@
                   <p>Conheça os benefícios da reciclagem de eletrônicos para sua empresa e como ela pode contribuir para
                     a preservação
                     do meio ambiente.</p>
-                  <button>Saiba mais</button>
                 </div>
                 <div class="blog__item">
                   <div class="blog__item-img">
@@ -241,7 +262,6 @@
                     <p>Conheça os benefícios da reciclagem de eletrônicos para sua empresa e como ela pode contribuir
                       para a preservação
                       do meio ambiente.</p>
-                    <button>Saiba mais</button>
                   </div>
                 </div>
               </div>
@@ -254,8 +274,7 @@
         <div class="row">
           <div class="col">
             <h2>Parceiros da iniciativa <span>e-renova</span></h2>
-            <div class="map__leaflet">
-            </div>
+            <div id="map"></div>
             <div class="map__logos">
               <div class="map__logos-sponsors">
               </div>
@@ -266,17 +285,18 @@
         </div>
       </div>
     </section>
+
   </main>
 
   <footer class="footer">
     <div class="container">
-  
+
       <div class="row pt-4 pb-3">
-  
+
         <div class="col col-md-6 footer__brand d-flex justify-content-center align-items-center">
           <img src="./images/renova-white.svg" alt="e-renova logo" class="footer__logo">
         </div>
-  
+
         <div class="col col-md-3 footer__links pt-2">
           <h6 class="footer__heading">Institucional</h6>
           <ul class="footer__list">
@@ -286,7 +306,7 @@
             <li class="footer__list-item"><a href="/privacy">Política de Privacidade</a></li>
           </ul>
         </div>
-  
+
         <div class="col col-md-3 footer__contact pt-2">
           <h6 class="footer__heading">Contato</h6>
           <ul class="footer__list">
@@ -294,26 +314,26 @@
             <li class="footer__list-item"><a href="tel:+5511953562620">+55 11 95356-2620</a></li>
           </ul>
         </div>
-  
+
       </div>
     </div>
-  
+
     <div class="container footer__rights py-3">
       <p class="mb-0">&copy; 2025 e-renova. Todos os direitos reservados.</p>
     </div>
   </footer>
 
 
-    <script>
-      window.addEventListener('load', () => {
-        const preloader = document.getElementById('preloader');
-        preloader.style.opacity = '0';
-        preloader.style.pointerEvents = 'none';
-        preloader.addEventListener('transitionend', () => preloader.remove(), { once: true });
-      });
-    </script>
+  <script>
+    window.addEventListener('load', () => {
+      const preloader = document.getElementById('preloader');
+      preloader.style.opacity = '0';
+      preloader.style.pointerEvents = 'none';
+      preloader.addEventListener('transitionend', () => preloader.remove(), { once: true });
+    });
+  </script>
 
-    <script type="module" src="./js/main.js"></script>
+  <script type="module" src="./js/main.js"></script>
 </body>
 
 </html>
