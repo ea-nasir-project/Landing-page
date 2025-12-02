@@ -217,6 +217,36 @@ body {
 
 .overview {
 
+  &__indicators {
+    border-top: 1px solid rgba($green-9, 0.1);
+    margin-top: $space-600;
+  }
+
+  &__indicator {
+    &-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: $space-100;
+    }
+
+    &-number {
+      font-family: $ff-headings;
+      font-size: clamp(2.5rem, 2rem + 1.5vw, 4rem);
+      font-weight: 700;
+      color: $brand-text;
+      line-height: 1;
+    }
+
+    &-text {
+      font-size: 1.125rem;
+      color: $gray-8;
+      line-height: 1.5;
+      max-width: 30ch;
+      margin: 0;
+    }
+  }
+
   &__cards {
 
     &-item {
