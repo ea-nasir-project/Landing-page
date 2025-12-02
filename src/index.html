@@ -66,7 +66,6 @@
             <button class="btn btn--blue">Empresas e indústrias</button>
             <button class="btn btn--login">Login</button>
 
-
             <div class="overview__indicators">
               <div class="overview__indicator-item">
                 Mais de X parceiros ativos em todo o Brasil, entre empresas, escolas, condomínios e projetos sociais.
@@ -78,6 +77,7 @@
                 Mais de X ações de educação ambiental, incluindo palestras, oficinas e campanhas de conscientização.
               </div>
             </div>
+
             <div class="overview__services">
               <div class="overview__service">
                 <h3 class="overview__service-title">Reciclagem de resíduos eletrônicos</h3>
@@ -91,7 +91,7 @@
               <div class="overview__service">
                 <h3 class="overview__service-title">Campanhas de Conscientização</h3>
                 <p class="overview__service-desc">
-                  Planejamento e realização de ações educativas para escolas, empresas e comunidades, sobre reciclagem,
+                  Realização de ações educativas para escolas, empresas e comunidades, sobre reciclagem,
                   sustentabilidade e práticas de economia circular.
                 </p>
               </div>
@@ -99,32 +99,98 @@
               <div class="overview__service">
                 <h3 class="overview__service-title">Instalação de composteiras em residências</h3>
                 <p class="overview__service-desc">
-                  Implantação e orientação de sistemas de compostagem domiciliar para quem deseja adotar práticas
-                  sustentáveis
-                  no próprio lar, de forma simples e acessível.
+                  Sistemas de compostagem domiciliar para quem deseja adotar práticas sustentáveis em casa de forma
+                  simples e acessível.
                 </p>
               </div>
             </div>
-            <div class="overview__cards">
-              <div class="overview__card-item">
-                <h3>Gere renda e impacto positivo</h3>
-                <p>Receba pelos materiais descartados e apoie a preservação do meio ambiente</p>
+
+            <div class="overview__cards row row-cols-1 row-cols-md-2 row-cols-xxl-4 g-3">
+              <div class="col">
+                <div class="overview__cards-item">
+                  <div class="overview__cards-content">
+                    <div class="overview__cards-icon-wrapper">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="overview__cards-icon">
+                        <circle cx="12" cy="12" r="10" />
+                        <path d="M12 6V18" />
+                        <path
+                          d="M15 9.5C15 8.11929 13.6569 7 12 7C10.3431 7 9 8.11929 9 9.5C9 10.8807 10.3431 12 12 12C13.6569 12 15 13.1193 15 14.5C15 15.8807 13.6569 17 12 17C10.3431 17 9 15.8807 9 14.5" />
+                      </svg>
+                    </div>
+                    <h3 class="overview__cards-title">Gere renda e impacto positivo</h3>
+                    <p class="overview__cards-desc">Receba pelos materiais descartados e apoie a preservação do meio
+                      ambiente</p>
+                  </div>
+                </div>
               </div>
-              <div class="overview__card-item">
-                <h3>Logística sem complicações</h3>
-                <p>Processo simples e transparente, com acompanhamento do envio e entrega</p>
+              <div class="col">
+                <div class="overview__cards-item">
+                  <div class="overview__cards-content">
+                    <div class="overview__cards-icon-wrapper">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="overview__cards-icon">
+                        <path
+                          d="M11 21.73a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73z">
+                        </path>
+                        <path d="M12 22V12"></path>
+                        <path d="m3.3 7 7.703 4.734a2 2 0 0 0 1.994 0L20.7 7"></path>
+                        <path d="m7.5 4.27 9 5.15"></path>
+                      </svg>
+                    </div>
+                    <h3 class="overview__cards-title">Logística sem complicações</h3>
+                    <p class="overview__cards-desc">Processo simples e transparente, com acompanhamento do envio e
+                      entrega
+                    </p>
+                  </div>
+                </div>
               </div>
-              <div class="overview__card-item">
-                <h3>Segurança da informação</h3>
-                <p>Todos os dispositivos passam por destruição de dados certificada, assegurando confidencialidade para
-                  pessoas e empresas
-                </p>
+              <div class="col">
+                <div class="overview__cards-item">
+                  <div class="overview__cards-content">
+                    <div class="overview__cards-icon-wrapper">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="overview__cards-icon">
+                        <path
+                          d="M20.91 11.12C20.91 16.01 17.36 20.59 12.51 21.93C12.18 22.02 11.82 22.02 11.49 21.93C6.63996 20.59 3.08997 16.01 3.08997 11.12V6.72997C3.08997 5.90997 3.70998 4.97998 4.47998 4.66998L10.05 2.39001C11.3 1.88001 12.71 1.88001 13.96 2.39001L19.53 4.66998C20.29 4.97998 20.92 5.90997 20.92 6.72997L20.91 11.12Z" />
+                        <path
+                          d="M12 12.5C13.1046 12.5 14 11.6046 14 10.5C14 9.39543 13.1046 8.5 12 8.5C10.8954 8.5 10 9.39543 10 10.5C10 11.6046 10.8954 12.5 12 12.5Z" />
+                        <path d="M12 12.5V15.5" />
+
+                      </svg>
+                    </div>
+                    <h3 class="overview__cards-title">Segurança da informação</h3>
+                    <p class="overview__cards-desc">Todos os dispositivos passam por destruição de dados
+                      certificada,
+                      assegurando confidencialidade para
+                      pessoas e empresas</p>
+                  </div>
+                </div>
               </div>
-              <div class="overview__card-item">
-                <h3>Responsabilidade ambiental</h3>
-                <p>Garantimos que seu material seja processado de forma legal, responsável e transparente</p>
+              <div class="col">
+                <div class="overview__cards-item">
+                  <div class="overview__cards-content">
+                    <div class="overview__cards-icon-wrapper">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="overview__cards-icon">
+                        <path
+                          d="M4.44893 17.009C-0.246384 7.83762 7.34051 0.686125 19.5546 3.61245C20.416 3.81881 21.0081 4.60984 20.965 5.49452C20.5862 13.288 17.0341 17.7048 6.13252 17.9857C5.43022 18.0038 4.76908 17.6344 4.44893 17.009Z" />
+                        <path d="M3.99999 21C5.50005 15.5 6 12.5 12 9.99997" />
+
+                      </svg>
+                    </div>
+                    <h3 class="overview__cards-title">Responsabilidade ambiental</h3>
+                    <p class="overview__cards-desc">Garantimos que seu material seja processado de forma legal,
+                      responsável e transparente</p>
+                  </div>
+                </div>
               </div>
             </div>
+
           </div>
         </div>
       </div>
@@ -136,7 +202,8 @@
           <div class="col">
             <h2>Transforme resíduos em valor</h2>
             <h3>Resíduos eletrônicos</h3>
-            <p>A e-renova oferece soluções ambientais completas, incluindo a reciclagem de resíduos eletrônicos com
+            <p>A <span class="brand-text-highlight">e-renova</span> oferece soluções ambientais completas, incluindo a
+              reciclagem de resíduos eletrônicos com
               coleta e destinação
               adequada, a realização de campanhas de conscientização para escolas, empresas e comunidades</p>
             <div>
@@ -178,52 +245,56 @@
           </div>
         </div>
 
-        <!-- Item 1: Text Left, Image Right -->
         <div class="row align-items-center mb-5">
-          <div class="col-md-6 order-2 order-md-1">
+          <div class="customers__content col-md-6 order-1 order-md-1">
             <h3>Descarte voluntário nos pontos de coleta</h3>
             <p>Para quem quer descartar seus eletrônicos de forma segura nos pontos de coleta parceiros</p>
-            <button class="btn btn--green">Saiba mais</button>
+            <div class="d-flex justify-content-center">
+              <button class="btn btn--green mb-4 mt-md-5">Saiba mais</button>
+            </div>
           </div>
-          <div class="col-md-6 order-1 order-md-2 mb-4 mb-md-0 img-wrapper">
+          <div class="col-md-6 order-2 order-md-2 mb-4 mb-md-0 customers__img-wrapper">
             <img src="images/individual.webp" alt="Descarte voluntário">
           </div>
         </div>
 
-        <!-- Item 2: Image Left, Text Right -->
         <div class="row align-items-center mb-5">
-          <div class="col-md-6 order-1 mb-4 mb-md-0 img-wrapper">
-            <img src="images/shopkeeper.webp" alt="Lojistas e parceiros">
-          </div>
-          <div class="col-md-6 order-2">
+          <div class="customers__content col-md-6 order-1 order-md-2">
             <h3>Lojistas e parceiros</h3>
             <p>Para quem quer enviar remessas pela plataforma e transformar eletrônicos parados em valor</p>
-            <button class="btn btn--purple">Saiba mais</button>
+            <div class="d-flex justify-content-center">
+              <button class="btn btn--purple mb-4 mt-md-5">Saiba mais</button>
+            </div>
+          </div>
+          <div class="col-md-6 order-2 order-md-1 mb-4 mb-md-0 customers__img-wrapper">
+            <img src="images/shopkeeper.webp" alt="Lojistas e parceiros">
           </div>
         </div>
 
-        <!-- Item 3: Text Left, Image Right -->
         <div class="row align-items-center mb-5">
-          <div class="col-md-6 order-2 order-md-1">
+          <div class="customers__content col-md-6 order-1 order-md-1 text-md-start text-center px-3">
             <h3>Soluções para grandes volumes</h3>
             <p>Para empresas, indústrias e organizações que precisam de logística reversa estruturada e coleta em
               volume</p>
-            <button class="btn btn--blue">Saiba mais</button>
+            <div class="d-flex justify-content-center">
+              <button class="btn btn--blue mb-4 mt-md-5">Saiba mais</button>
+            </div>
           </div>
-          <div class="col-md-6 order-1 order-md-2 mb-4 mb-md-0 img-wrapper">
+          <div class="col-md-6 order-2 order-md-2 mb-4 mb-md-0 customers__img-wrapper">
             <img src="images/companies.webp" alt="Soluções para grandes volumes">
           </div>
         </div>
 
-        <!-- Item 4: Image Left, Text Right -->
-        <div class="row align-items-center">
-          <div class="col-md-6 order-1 mb-4 mb-md-0 img-wrapper">
-            <img src="images/composting.webp" alt="Instalação de composteiras residenciais">
-          </div>
-          <div class="col-md-6 order-2">
+        <div class="row align-items-center text-center">
+          <div class="customers__content col-md-6 order-1 order-md-2 text-center">
             <h3>Instalação de composteiras residenciais</h3>
             <p>Para quem deseja adotar práticas sustentáveis no dia a dia</p>
-            <button class="btn btn--yellow">Saiba mais</button>
+            <div class="d-flex justify-content-center">
+              <button class="btn btn--yellow mb-4 mt-md-5">Saiba mais</button>
+            </div>
+          </div>
+          <div class="col-md-6 order-2 order-md-1 mb-4 mb-md-0 customers__img-wrapper">
+            <img src="images/composting.webp" alt="Instalação de composteiras residenciais">
           </div>
         </div>
       </div>
@@ -273,7 +344,7 @@
       <div class="container">
         <div class="row">
           <div class="col">
-            <h2>Parceiros da iniciativa <span>e-renova</span></h2>
+            <h2>Parceiros da iniciativa <span class="brand-text-highlight">e-renova</span></h2>
             <div id="map"></div>
             <div class="map__logos">
               <div class="map__logos-sponsors">

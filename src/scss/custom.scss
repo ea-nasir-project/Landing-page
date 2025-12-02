@@ -92,7 +92,7 @@ $space-1000: 5rem; // 80px
 
   font-family: $ff-headings;
   font-size: 1.125rem;
-  font-weight: 400;
+  font-weight: 600;
   line-height: 1.2;
   text-decoration: none;
   cursor: pointer;
@@ -152,7 +152,6 @@ $space-1000: 5rem; // 80px
   &--login {
     background-color: $gray-3;
     color: $gray-10;
-    font-weight: 400;
     border: 2px solid $green-4;
 
     &:hover {
@@ -168,6 +167,7 @@ $space-1000: 5rem; // 80px
 body {
   font-family: $ff-base;
   font-size: 1.125rem;
+  background-color: $green-1;
 
   h1,
   h2,
@@ -187,16 +187,18 @@ body {
   h2 {
     font-size: clamp(2.5rem, 2rem + 1.5vw, 4rem); // 40px -> 64px
     font-weight: 700;
-    margin-bottom: $space-400;
+    margin-bottom: $space-600;
   }
 
   h3 {
     font-size: clamp(1.75rem, 1.25rem + 1.2vw, 3rem); // ~28px -> 48px
     font-weight: 500;
+    margin-bottom: $space-300;
   }
 
   h4 {
     font-size: clamp(1.25rem, 1rem + 0.8vw, 2.25rem); // ~20px -> 36px
+    margin-bottom: $space-200;
   }
 
   h5 {
@@ -221,6 +223,77 @@ body {
   &__service-title {}
 
   &__service-desc {}
+
+  &__cards {
+
+    &-item {
+      display: flex;
+      flex-direction: column;
+      gap: $space-300;
+      padding: $space-300 0;
+      background-color: $gray-2;
+      border: 1px solid rgba($green-9, 0.1);
+      border-radius: $space-200;
+      box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+      transition: all 0.3s ease;
+      text-decoration: none;
+      height: 100%;
+
+      &:hover {
+        border-color: rgba($brand-text, 0.5);
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+      }
+    }
+
+    &-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: $space-400;
+      text-align: center;
+    }
+
+    &-icon-wrapper {
+      margin-bottom: $space-200;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: $space-800;
+      height: $space-800;
+      border-radius: 50%;
+      background-color: rgba($brand-text, 0.1);
+      transition: background-color 0.3s ease;
+
+      .overview__cards-item:hover & {
+        background-color: rgba($brand-text, 0.2);
+      }
+    }
+
+    &-icon {
+      width: $space-400;
+      height: $space-400;
+      color: $brand-text;
+      transition: transform 0.3s ease;
+
+      .overview__cards-item:hover & {
+        transform: scale(1.1);
+      }
+    }
+
+    &-title {
+      margin-bottom: $space-100;
+      font-family: $ff-headings;
+      font-weight: 600;
+      font-size: 1.5rem;
+    }
+
+    &-desc {
+      font-size: 1rem;
+      color: $gray-8;
+      line-height: 1.625;
+      margin: 0;
+    }
+  }
 }
 
 .footer {
@@ -292,11 +365,24 @@ body {
   border: 4px solid $green-4;
 }
 
-.img-wrapper {
+.customers {
+  &__content {
+    text-align: center; 
+    padding-left: $space-600;
+    padding-right: $space-600;
+  }
 
-  img {
-    max-height: 400px;
-    max-width: 400px;
-    object-fit: cover;
+  &__img-wrapper {
+    display: flex;
+    justify-content: center;
+
+    img {
+      border: 4px solid transparent;
+      outline: 4px solid $green-4;
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      border-radius: $space-100;
+    }
   }
 }
