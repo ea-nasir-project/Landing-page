@@ -216,13 +216,6 @@ body {
 }
 
 .overview {
-  &__services {}
-
-  &__service-item {}
-
-  &__service-title {}
-
-  &__service-desc {}
 
   &__cards {
 
@@ -292,6 +285,78 @@ body {
       color: $gray-8;
       line-height: 1.625;
       margin: 0;
+    }
+  }
+}
+
+.products {
+  &__card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    min-height: 200px;
+    padding: $space-400;
+    border-radius: $space-200;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    color: $gray-1;
+    text-decoration: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%;
+
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.55) 65%, rgba(0, 0, 0, 0.1) 100%);
+      z-index: 1;
+      transition: background 0.3s ease;
+    }
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+
+      &::before {
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.5) 50%, rgba(0, 0, 0, 0.2) 100%);
+      }
+    }
+
+    &-content {
+      position: relative;
+      z-index: 2;
+
+      h4 {
+        color: $gray-1;
+        font-weight: 700;
+        margin-bottom: $space-100;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+      }
+
+      p {
+        color: $gray-3;
+        font-size: 1rem;
+        line-height: 1.5;
+        margin: 0;
+      }
+    }
+
+    &--electronics {
+      background-image: url('../images/boards.webp');
+    }
+
+    &--solar {
+      background-image: url('../images/solar.webp');
+    }
+
+    &--batteries {
+      background-image: url('../images/bateries.webp');
+    }
+
+    &--composting {
+      background-image: url('../images/composting.webp');
     }
   }
 }
@@ -367,7 +432,7 @@ body {
 
 .customers {
   &__content {
-    text-align: center; 
+    text-align: center;
     padding-left: $space-600;
     padding-right: $space-600;
   }
