@@ -59,6 +59,30 @@ $brand-icon: #158EB3;
 $ff-base: "Open Sans", sans-serif;
 $ff-headings: "Nunito Sans", sans-serif;
 
+$fontsize-heading-xxl: 2rem;
+$fontsize-heading-xl: 2.25rem;
+$fontsize-heading-l: 1.75rem;
+$fontsize-heading-m: 2rem;
+$fontsize-heading-s: 1.5rem;
+$fontsize-heading-xs: 1.75rem;
+$fontsize-heading-xxs: 1.25rem;
+
+$lineheight-heading-xxl: 2.25rem;
+$lineheight-heading-xl: 2rem;
+$lineheight-heading-l: 1.75rem;
+$lineheight-heading-m: 1.5rem;
+$lineheight-heading-s: 1.25rem;
+$lineheight-heading-xs: 1.25rem;
+$lineheight-heading-xxs: 1rem;
+
+$fontsize-body-l: 1.4rem;
+$fontsize-body: 1.125rem;
+$fontsize-body-s: 0.875rem;
+
+$lineheight-body-l: 1.5rem;
+$lineheight-body: 1.25rem;
+$lineheight-body-s: 1rem;
+
 $space-0: 0rem; // 0px
 $space-25: 0.125rem; // 2px
 $space-50: 0.25rem; // 4px
@@ -73,7 +97,6 @@ $space-500: 2.5rem; // 40px
 $space-600: 3rem; // 48px
 $space-800: 4rem; // 64px
 $space-1000: 5rem; // 80px
-
 
 .brand-text-highlight {
   color: lighten($brand-text, 15%);
@@ -166,7 +189,7 @@ $space-1000: 5rem; // 80px
 
 body {
   font-family: $ff-base;
-  font-size: 1.125rem;
+  font-size: clamp(1.125rem, 1.05rem + 0.4vw, 1.25rem);
   background-color: $green-1;
 
   h1,
@@ -194,6 +217,7 @@ body {
     font-size: clamp(1.75rem, 1.25rem + 1.2vw, 3rem); // ~28px -> 48px
     font-weight: 500;
     margin-bottom: $space-300;
+    color: $green-8;
   }
 
   h4 {
@@ -208,6 +232,11 @@ body {
   h6 {
     font-size: clamp(0.9rem, 0.85rem + 0.4vw, 1.25rem); // ~14px -> 20px
   }
+
+  p {
+    margin-left: $space-500;
+  }
+    
 
   section {
     padding-top: $space-800;
@@ -239,11 +268,51 @@ body {
     }
 
     &-text {
-      font-size: 1.125rem;
       color: $gray-8;
-      line-height: 1.5;
+      // line-height: 1.5;
       max-width: 30ch;
       margin: 0;
+    }
+  }
+
+  &__services {
+    margin-bottom: $space-1000;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &-item {
+      margin-bottom: $space-400;
+    }
+
+    &-title {
+      display: inline-block;
+      position: relative;
+      font-weight: 700;
+      color: $green-8;
+      margin-bottom: $space-200;
+      padding-bottom: $space-100;
+      text-decoration: underline;
+
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: -14px;
+        left: 0;
+        width: 100%;
+        max-width: 80vw;
+        margin-left: $space-500;
+        height: 3px;
+        background-color: $green-4;
+        border-radius: $space-50;
+      }
+    }
+
+    &-desc {
+      color: $gray-8;
+      line-height: 1.6;
+      margin-left: $space-500;
     }
   }
 
@@ -461,6 +530,11 @@ body {
 }
 
 .customers {
+
+  p {
+    margin-left: $space-0;
+  }
+
   &__content {
     text-align: center;
     padding-left: $space-600;
