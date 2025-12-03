@@ -236,7 +236,7 @@ body {
   p {
     margin-left: $space-500;
   }
-    
+
 
   section {
     padding-top: $space-800;
@@ -256,21 +256,34 @@ body {
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: $space-100;
+      justify-content: center;
+      gap: $space-200;
+      background-color: $green-9;
+      padding: $space-400;
+      border-radius: $space-200;
+      text-align: center;
+      height: 100%;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+      &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+      }
     }
 
     &-number {
-      font-family: $ff-headings;
-      font-size: clamp(2.5rem, 2rem + 1.5vw, 4rem);
+      font-size: clamp(2rem, 1.5rem + 1.2vw, 3rem);
       font-weight: 700;
-      color: $brand-text;
+      color: $green-3;
       line-height: 1;
     }
 
     &-text {
-      color: $gray-8;
-      // line-height: 1.5;
-      max-width: 30ch;
+      color: $green-3;
+      font-size: $fontsize-body-l;
+      line-height: $lineheight-body-l;
+      font-weight: 600;
       margin: 0;
     }
   }
@@ -530,6 +543,10 @@ body {
 }
 
 .customers {
+
+  h3 {
+    font-weight: 700;
+    }
 
   p {
     margin-left: $space-0;
