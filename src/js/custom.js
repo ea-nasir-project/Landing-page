@@ -1,90 +1,116 @@
-// Menu Toggle Functionality
-const toggleNavBtn = document.querySelector('.toogle-nav');
-const navbar = document.querySelector('[data-navbar="navbar"]');
-const navLinks = document.querySelectorAll('.nav-link');
+// Header scroll behavior
+const header = document.querySelector('.header');
+const main = document.querySelector('main');
 
-if (toggleNavBtn && navbar) {
-    toggleNavBtn.addEventListener('click', function () {
-        const isExpanded = toggleNavBtn.getAttribute('aria-expanded') === 'true';
-        toggleNavBtn.setAttribute('aria-expanded', !isExpanded);
-        navbar.classList.toggle('show');
-    });
+if (header && main) {
+  window.addEventListener('scroll', () => {
+    const mainTop = main.getBoundingClientRect().top;
 
-    // Close menu when clicking on a link (mobile)
-    navLinks.forEach(link => {
-        link.addEventListener('click', function () {
-            if (window.innerWidth < 992) {
-                navbar.classList.remove('show');
-                toggleNavBtn.setAttribute('aria-expanded', 'false');
-            }
-        });
-    });
-
-    // Close menu when clicking outside
-    document.addEventListener('click', function (e) {
-        if (window.innerWidth < 992) {
-            if (!navbar.contains(e.target) && !toggleNavBtn.contains(e.target)) {
-                navbar.classList.remove('show');
-                toggleNavBtn.setAttribute('aria-expanded', 'false');
-            }
-        }
-    });
+    if (mainTop + 200 <= 0) {
+      header.classList.add('header--fixed');
+    } else {
+      header.classList.remove('header--fixed');
+    }
+  });
 }
 
-document.addEventListener('DOMContentLoaded', function () {
-    const faqButtons = document.querySelectorAll('.faq-question');
+// Hero scroll snap behavior
+const hero = document.querySelector('.hero');
+if (hero && main) {
+  let isScrolling = false;
+  let scrollTimeout;
 
-    function closeOtherItems(currentItem) {
-        faqButtons.forEach(otherBtn => {
-            const otherItem = otherBtn.closest('.faq-item');
-            const otherAnswer = otherItem.querySelector('.faq-answer');
+  window.addEventListener('wheel', (e) => {
+    // Check if we're in the hero section
+    const heroRect = hero.getBoundingClientRect();
+    // const mainRect = main.getBoundingClientRect();
 
-            if (otherItem !== currentItem && otherItem.classList.contains('open')) {
-                otherItem.classList.remove('open');
-                otherBtn.setAttribute('aria-expanded', 'false');
-                otherAnswer.style.maxHeight = null;
-            }
-        });
+    // If hero is visible and user scrolls down
+    if (heroRect.bottom > 0 && e.deltaY > 0 && !isScrolling) {
+      e.preventDefault();
+      isScrolling = true;
+      const targetY = window.scrollY + heroRect.bottom;
+
+      window.scrollTo({
+        top: targetY,
+        behavior: 'smooth'
+      });
+
+      // Reset flag after animation
+      setTimeout(() => {
+        isScrolling = false;
+      }, 1000);
     }
+  }, { passive: false });
 
-    faqButtons.forEach(btn => {
-        btn.addEventListener('click', function () {
-            const item = btn.closest('.faq-item');
-            const answer = item.querySelector('.faq-answer');
-            const isOpen = !item.classList.contains('open');
+  // Handle touch scroll for mobile
+  let touchStart = 0;
+  window.addEventListener('touchstart', (e) => {
+    touchStart = e.touches[0].clientY;
+  }, { passive: true });
 
-            closeOtherItems(item);
+  window.addEventListener('touchmove', (e) => {
+    const heroRect = hero.getBoundingClientRect();
+    const mainRect = main.getBoundingClientRect();
+    const touchEnd = e.touches[0].clientY;
+    const touchDelta = touchStart - touchEnd;
 
-            item.classList.toggle('open');
-            btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    // If hero is visible and user swipes up (scroll down)
+    if (heroRect.bottom > 0 && mainRect.top > 100 && touchDelta > 30 && !isScrolling) {
+      isScrolling = true;
 
-            // Remove any inline max-height to let CSS handle it
-            answer.style.maxHeight = '';
-        });
-    });
-});
+      // Smooth scroll to main
+      main.scrollIntoView({ behavior: 'smooth', block: 'start' });
 
-// Back to Top Button
-const backToTopBtn = document.querySelector('[data-btn="back-to-top"]');
+      setTimeout(() => {
+        isScrolling = false;
+      }, 1000);
+    }
+  }, { passive: true });
+}
 
-const hero = document.querySelector('.hero-section');
+// Mobile menu toggle
+const menuToggle = document.querySelector('.header__menu-toggle');
+const menu = document.querySelector('.header__menu');
 
-if (backToTopBtn) {
-    window.addEventListener('scroll', function () {
-        if (hero) {
-            const heroHeight = hero.offsetHeight;
-            if (window.scrollY > heroHeight) {
-                backToTopBtn.style.opacity = '1';
-                backToTopBtn.style.pointerEvents = 'auto';
-            } else {
-                backToTopBtn.style.opacity = '0';
-                backToTopBtn.style.pointerEvents = 'none';
-            }
-        }
-    });
+if (menuToggle && menu) {
+  menuToggle.addEventListener('click', () => {
+    menu.classList.toggle('header__menu--active');
+    menuToggle.classList.toggle('header__menu-toggle--active');
+  });
 
-    backToTopBtn.addEventListener('click', function (e) {
+  // Mobile dropdown toggle
+  const dropdownLink = document.querySelector('.header__menu-link--dropdown');
+  const dropdown = document.querySelector('.header__dropdown');
+
+  if (dropdownLink && dropdown) {
+    dropdownLink.addEventListener('click', (e) => {
+      // Only toggle on mobile (when menu toggle is visible)
+      if (window.innerWidth <= 768) {
         e.preventDefault();
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+        dropdown.classList.toggle('active');
+      }
     });
+  }
+
+  // Close menu when clicking on a menu link (except dropdown parent)
+  const menuLinks = menu.querySelectorAll('.header__menu-link:not(.header__menu-link--dropdown)');
+  menuLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      menu.classList.remove('header__menu--active');
+      menuToggle.classList.remove('header__menu-toggle--active');
+    });
+  });
+
+  // Close menu when clicking on dropdown links
+  const dropdownLinks = menu.querySelectorAll('.header__dropdown-link');
+  dropdownLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      menu.classList.remove('header__menu--active');
+      menuToggle.classList.remove('header__menu-toggle--active');
+      if (dropdown) {
+        dropdown.classList.remove('active');
+      }
+    });
+  });
 }
