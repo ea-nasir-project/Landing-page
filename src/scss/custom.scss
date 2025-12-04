@@ -254,10 +254,10 @@ body {
   }
 }
 
-main {
-  position: relative;
-  top: -117px;
-}
+// main {
+//   position: relative;
+//   top: -117px;
+// }
 
 .header {
   position: relative;
@@ -266,7 +266,7 @@ main {
   right: 0;
   z-index: 1000;
   padding: $space-300 0;
-  transition: all 0.3s ease;
+  transition: all 0.5s ease-in-out;
 
   &.header--fixed {
     position: fixed;
@@ -278,14 +278,18 @@ main {
 
   &__logo {
     width: auto;
-    transition: height 0.3s ease;
+    transition: height 0.5s ease-in-out;
 
     .header--fixed & {
       height: 44px;
     }
-
+    
     @media (max-width: 400px) {
       width: 256px;
+    }
+    
+    @media (max-width: 991px) {
+      width: 224px;
     }
   }
 
@@ -301,14 +305,23 @@ main {
     margin: 0;
     padding: 0;
     align-items: center;
-
-    @media (max-width: 991px) {
-      gap: 1.2rem;
-    }
   }
 
   &__menu-item {
     margin: 0;
+    position: relative;
+
+    &--dropdown {
+      &:hover .header__dropdown {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+      }
+
+      &:hover .header__dropdown-icon {
+        transform: rotate(180deg);
+      }
+    }
   }
 
   &__menu-link {
@@ -321,13 +334,68 @@ main {
     &:hover {
       color: $green-3;
     }
+
+    &--dropdown {
+      display: flex;
+      align-items: center;
+      gap: $space-50;
+      cursor: pointer;
+    }
+  }
+
+  &__dropdown-icon {
+    transition: transform 0.3s ease;
+  }
+
+  &__dropdown {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-10px);
+    background-color: rgba($green-9, 0.98);
+    backdrop-filter: blur(10px);
+    border-radius: $space-100;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    list-style: none;
+    margin: $space-150 0 0 0;
+    padding: $space-100 0;
+    min-width: 220px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
+    z-index: 1001;
+
+    &-item {
+      margin: 0;
+      border-bottom: 1px solid rgba($green-1, 0.1);
+
+      &:last-child {
+        border-bottom: none;
+      }
+    }
+
+    &-link {
+      display: block;
+      padding: $space-200 $space-300;
+      color: $green-1;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.95rem;
+      transition: background-color 0.2s ease, color 0.2s ease;
+      white-space: nowrap;
+
+      &:hover {
+        background-color: rgba($green-7, 0.5);
+        color: $green-3;
+      }
+    }
   }
 
   &__menu-toggle {
     display: none;
     background: none;
     border: none;
-    color: $gray-1;
+    color: $gray-0;
     cursor: pointer;
     padding: $space-100;
     margin-left: auto;
@@ -392,6 +460,42 @@ main {
       &:hover {
         background-color: rgba($green-7, 0.5);
       }
+
+      &--dropdown {
+        justify-content: center;
+      }
+    }
+
+    &__dropdown {
+      position: static;
+      transform: none;
+      opacity: 1;
+      visibility: visible;
+      background-color: rgba($green-8, 0.5);
+      margin: 0;
+      padding: 0;
+      box-shadow: none;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+
+      &.active {
+        max-height: 300px;
+      }
+
+      &-item {
+        border-bottom: 1px solid rgba($green-1, 0.05);
+      }
+
+      &-link {
+        padding: $space-250 $space-500;
+        text-align: center;
+        font-size: 0.9rem;
+      }
+    }
+
+    &__dropdown-icon {
+      display: inline-block;
     }
 
     &__menu-toggle {
@@ -409,7 +513,7 @@ main {
   background-position: center;
   color: $gray-1;
   padding: 117px 0 0 0;
-  margin: 0;
+  margin: 0 0 -116px 0;
 
   &__overlay {
     position: absolute;
@@ -431,11 +535,11 @@ main {
 
   &__title {
     font-weight: 700;
-    color: $green-2;
+    color: $gray-0;
   }
 
   &__lead {
-    color: $green-2;
+    color: $gray-0;
     font-size: clamp(1.5rem, 1rem + 0.8vw, 2.5rem);
     font-family: $ff-headings;
     font-weight: 700;
@@ -806,6 +910,7 @@ main {
   background-image: url("/images/footer-bg.svg");
   background-size: 100%;
   background-position: bottom;
+  // bottom: -117px;
   background-repeat: no-repeat;
 
   #map {
