@@ -58,6 +58,9 @@ $purple-10: #14041c;
 $brand-text: #0EA47A;
 $brand-icon: #158EB3;
 
+$background-color-home-1: #dff7ec;
+$background-color-home-2: #C5F2E0;
+
 $ff-base: "Open Sans", sans-serif;
 $ff-headings: "Nunito Sans", sans-serif;
 
@@ -188,7 +191,7 @@ $space-1000: 5rem; // 80px
 body {
   font-family: $ff-base;
   font-size: clamp(1.125rem, 1.05rem + 0.4vw, 1.25rem);
-  background-color: $green-1;
+  background-color: $background-color-home-1;
 
   h1,
   h2,
@@ -254,11 +257,6 @@ body {
   }
 }
 
-// main {
-//   position: relative;
-//   top: -117px;
-// }
-
 .header {
   position: relative;
   top: 0;
@@ -283,11 +281,11 @@ body {
     .header--fixed & {
       height: 44px;
     }
-    
+
     @media (max-width: 400px) {
       width: 256px;
     }
-    
+
     @media (max-width: 991px) {
       width: 224px;
     }
@@ -578,9 +576,14 @@ body {
 }
 
 .overview {
+  position: relative;
+  background-image: url("/images/home-top.svg");
+  background-size: 100%;
+  background-position: top;
+  background-repeat: no-repeat;
+  z-index: 1;
 
-  &__indicators {
-  }
+  &__indicators {}
 
   &__indicator {
     &-item {
@@ -667,7 +670,7 @@ body {
       flex-direction: column;
       gap: $space-300;
       padding: $space-300 0;
-      background-color: $gray-1;
+      background-color: $background-color-home-2;
       border: 1px solid rgba($green-9, 0.1);
       border-radius: $space-200;
       box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
@@ -733,6 +736,38 @@ body {
 }
 
 .products {
+  position: relative;
+  background-color: $background-color-home-2;
+  z-index: 0;
+
+  &::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: -78px;
+    left: 0;
+    width: 100%;
+    height: calc(100% + 78px);
+    background-image: url("/images/home-products-before.svg");
+    background-size: 100%;
+    // background-position: top;
+    background-repeat: no-repeat;
+    z-index: -1;
+  }
+
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: calc(100%);
+    background-image: url("/images/home-products-after.svg");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    z-index: -1;
+  }
+
   &__card {
     position: relative;
     display: flex;
@@ -805,6 +840,8 @@ body {
 }
 
 .customers {
+  position: relative;
+  z-index: 1;
 
   h3 {
     font-weight: 700;
@@ -836,6 +873,38 @@ body {
 }
 
 .blog {
+  position: relative;
+  background-color: $background-color-home-2;
+  z-index: 0;
+
+  &::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: -78px;
+    left: 0;
+    width: 100%;
+    height: calc(100% + 78px);
+    background-image: url("/images/home-blog-before.svg");
+    background-size: 100%;
+    // background-position: top;
+    background-repeat: no-repeat;
+    z-index: -1;
+  }
+
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: calc(100%);
+    background-image: url("/images/home-blog-after.svg");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    z-index: -1;
+  }
+
   &__item {
     position: relative;
     border-radius: $space-200;
@@ -905,10 +974,9 @@ body {
 
 .map {
   position: relative;
-  background-image: url("/images/footer-bg.svg");
+  background-image: url("/images/home-bottom.svg");
   background-size: 100%;
   background-position: bottom;
-  // bottom: -117px;
   background-repeat: no-repeat;
 
   #map {
