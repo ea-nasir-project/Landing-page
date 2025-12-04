@@ -1,13 +1,15 @@
-$gray-1: #ffffff;
-$gray-2: #fafafa;
-$gray-3: #f5f5f5;
-$gray-4: #f0f0f0;
-$gray-5: #d9d9d9;
-$gray-6: #bfbfbf;
-$gray-7: #8c8c8c;
-$gray-8: #595959;
-$gray-9: #434343;
-$gray-10: #262626;
+$gray-0: #ffffff;
+$gray-1: #E9E9E9;
+$gray-2: #D4D4D4;
+$gray-3: #BEBEBE;
+$gray-4: #A8A8A8;
+$gray-5: #929292;
+$gray-6: #7C7C7C;
+$gray-7: #666666;
+$gray-8: #505050;
+$gray-9: #3B3B3B;
+$gray-10: #252525;
+$gray-11: #000000;
 
 $green-1: #dff7ec;
 $green-2: #abebd0;
@@ -137,7 +139,7 @@ $space-1000: 5rem; // 80px
   }
 
   &--green {
-    background-color: $green-5;
+    background-color: $green-4;
     color: $green-9;
 
     &:hover {
@@ -146,7 +148,7 @@ $space-1000: 5rem; // 80px
   }
 
   &--yellow {
-    background-color: $yellow-5;
+    background-color: $yellow-4;
     color: $yellow-10;
 
     &:hover {
@@ -155,34 +157,30 @@ $space-1000: 5rem; // 80px
   }
 
   &--purple {
-    background-color: $purple-5;
+    background-color: $purple-4;
     color: $purple-9;
 
     &:hover {
-      background-color: $purple-4;
+      background-color: $purple-3;
     }
   }
 
   &--blue {
-    background-color: $blue-5;
+    background-color: $blue-4;
     color: $blue-9;
 
     &:hover {
-      background-color: $blue-4;
+      background-color: $blue-3;
     }
   }
 
   &--login {
-    background-color: $gray-3;
-    color: $gray-10;
-    border: 2px solid $green-4;
+    background-color: $green-5;
+    color: $green-9 !important;
 
     &:hover {
-      background-color: $gray-4;
-    }
-
-    &:focus {
-      outline-color: $blue-5;
+      background-color: $green-4;
+      color: $green-9 !important;
     }
   }
 }
@@ -197,39 +195,51 @@ body {
   h3,
   h4,
   h5,
-  h6 {
+  h6,
+  .h1,
+  .h2,
+  .h3,
+  .h4,
+  .h5,
+  .h6 {
     font-family: $ff-headings;
     color: $green-9;
     font-weight: 400;
   }
 
-  h1 {
-    font-size: clamp(3.75rem, 4.5rem + 2vw, 5.625rem); // 60px -> 90px
+  h1,
+  .h1 {
+    font-size: clamp(37px, calc(37px + (80 - 37) * ((100vw - 375px) / (1024 - 375))), 5rem); // 60px -> 80px
   }
 
-  h2 {
+  h2,
+  .h2 {
     font-size: clamp(2.5rem, 2rem + 1.5vw, 4rem); // 40px -> 64px
     font-weight: 700;
     margin-bottom: $space-600;
   }
 
-  h3 {
+  h3,
+  .h3 {
     font-size: clamp(1.75rem, 1.25rem + 1.2vw, 3rem); // ~28px -> 48px
     font-weight: 700;
     margin-bottom: $space-300;
     color: $green-8;
   }
 
-  h4 {
+  h4,
+  .h4 {
     font-size: clamp(1.25rem, 1rem + 0.8vw, 2.25rem); // ~20px -> 36px
     margin-bottom: $space-200;
   }
 
-  h5 {
+  h5,
+  .h5 {
     font-size: clamp(1rem, 0.9rem + 0.5vw, 1.5rem); // ~16px -> 24px
   }
 
-  h6 {
+  h6,
+  .h6 {
     font-size: clamp(0.9rem, 0.85rem + 0.4vw, 1.25rem); // ~14px -> 20px
   }
 
@@ -241,6 +251,225 @@ body {
   section {
     padding-top: $space-800;
     padding-bottom: $space-800;
+  }
+}
+
+main {
+  position: relative;
+  top: -117px;
+}
+
+.header {
+  position: relative;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  padding: $space-300 0;
+  transition: all 0.3s ease;
+
+  &.header--fixed {
+    position: fixed;
+    background-color: rgba($green-9, 0.8);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.75);
+    padding: $space-200 0;
+  }
+
+  &__logo {
+    width: auto;
+    transition: height 0.3s ease;
+
+    .header--fixed & {
+      height: 44px;
+    }
+
+    @media (max-width: 400px) {
+      width: 256px;
+    }
+  }
+
+  &__nav {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  &__menu {
+    list-style: none;
+    display: flex;
+    gap: $space-400;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+
+    @media (max-width: 991px) {
+      gap: 1.2rem;
+    }
+  }
+
+  &__menu-item {
+    margin: 0;
+  }
+
+  &__menu-link {
+    color: $green-1;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1rem;
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: $green-3;
+    }
+  }
+
+  &__menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: $gray-1;
+    cursor: pointer;
+    padding: $space-100;
+    margin-left: auto;
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: $green-3;
+    }
+
+    svg {
+      display: block;
+    }
+  }
+
+  @media (max-width: 768px) {
+    &__nav {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+    }
+
+    &__menu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background-color: rgba($green-9, 0.98);
+      backdrop-filter: blur(10px);
+      flex-direction: column;
+      gap: 0;
+      padding: $space-300 0;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      opacity: 0;
+      transform: translateY(-10px);
+      transition: opacity 0.3s ease, transform 0.3s ease;
+      pointer-events: none;
+
+      &--active {
+        padding: $space-200 $space-500;
+        display: flex;
+        opacity: 1;
+        transform: translateY(0);
+        pointer-events: auto;
+      }
+    }
+
+    &__menu-item {
+      width: 100%;
+      border-bottom: 1px solid rgba($gray-1, 0.1);
+
+      &:last-child {
+        border-bottom: none;
+      }
+    }
+
+    &__menu-link {
+      display: block;
+      padding: $space-300 $space-500;
+      text-align: center;
+
+      &:hover {
+        background-color: rgba($green-7, 0.5);
+      }
+    }
+
+    &__menu-toggle {
+      display: block;
+    }
+  }
+}
+
+.hero {
+  position: relative;
+  top: -117px;
+  min-height: calc(100vh - 117px);
+  background-image: url('../images/hero.webp');
+  background-size: cover;
+  background-position: center;
+  color: $gray-1;
+  padding: 117px 0 0 0;
+  margin: 0;
+
+  &__overlay {
+    position: absolute;
+    inset: 0;
+    // background: linear-gradient(135deg, rgba(0, 69, 56, 0.85) 0%, rgba(6, 145, 110, 0.75) 50%, rgba(49, 196, 150, 0.65) 100%);
+    background: linear-gradient(155deg, rgba(0, 34, 28, 0.85) 5%, rgba(0, 110, 83, 0.85) 65%, rgba(23, 95, 72, 0.55) 100%);
+    z-index: 1;
+  }
+
+  &__container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    min-height: inherit;
+    z-index: 2;
+  }
+
+  &__title {
+    font-weight: 700;
+    color: $green-2;
+  }
+
+  &__lead {
+    color: $green-2;
+    font-size: clamp(1.5rem, 1rem + 0.8vw, 2.5rem);
+    font-family: $ff-headings;
+    font-weight: 700;
+    margin-bottom: $space-500;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  &__cta {
+    font-size: 1.25rem;
+    padding: 1.25em 2em;
+  }
+
+  &__actions {
+    position: absolute;
+    bottom: $space-600;
+    left: 0;
+    right: 0;
+    z-index: 2;
+  }
+
+  @media (max-width: 768px) {
+    &__title {
+      padding-left: 0;
+    }
+
+    &__lead {
+      padding-left: 0;
+      margin: 0;
+    }
+
+    &__actions {
+      bottom: $space-400;
+    }
   }
 }
 
@@ -336,7 +565,7 @@ body {
       flex-direction: column;
       gap: $space-300;
       padding: $space-300 0;
-      background-color: $gray-2;
+      background-color: $gray-1;
       border: 1px solid rgba($green-9, 0.1);
       border-radius: $space-200;
       box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
@@ -492,7 +721,7 @@ body {
   &__img-wrapper {
     display: flex;
     justify-content: center;
-    
+
     img {
       border: 4px solid transparent;
       outline: 4px solid $green-4;
@@ -513,11 +742,11 @@ body {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     aspect-ratio: 1 / 1; // Square cards
     cursor: pointer;
-    
+
     &:hover {
       transform: translateY(-4px);
       box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
-      
+
       .blog__item-img img {
         transform: scale(1.1);
       }
@@ -533,7 +762,7 @@ body {
     inset: 0;
     width: 100%;
     height: 100%;
-    
+
     img {
       width: 100%;
       height: 100%;
@@ -578,15 +807,15 @@ body {
   background-size: 100%;
   background-position: bottom;
   background-repeat: no-repeat;
-}
 
-#map {
-  height: 500px;
-  width: 100%;
-  margin: 1.5rem auto;
-  border-radius: $space-100;
-  border: 4px solid $green-4;
+  #map {
+    height: 500px;
+    width: 100%;
+    margin: 1.5rem auto;
+    border-radius: $space-100;
+    border: 4px solid $green-4;
   }
+}
 
 .footer {
   color: $green-1;
