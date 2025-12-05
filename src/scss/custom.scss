@@ -281,7 +281,7 @@ body {
   }
 
   p {
-    margin-left: $space-500;
+    padding-left: $space-500;
   }
 
 
@@ -686,7 +686,6 @@ body {
     &-desc {
       color: $gray-8;
       line-height: 1.6;
-      margin-left: $space-500;
       width: 50vw;
 
       @media (max-width: 768px) {
