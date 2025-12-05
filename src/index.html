@@ -31,92 +31,94 @@
     </div>
   </div>
 
-  <header class="header">
-    <div class="container">
-      <div class="row align-items-center">
-        <div class="col-auto">
-          <img src="images/renova-main.svg" alt="e-renova" class="header__logo">
+  <div style="position: relative;">
+
+    <header class="header">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-auto">
+            <img src="images/renova-main.svg" alt="e-renova" class="header__logo">
+          </div>
+          <div class="col">
+            <nav class="header__nav">
+              <ul class="header__menu">
+                <li class="header__menu-item"><a href="#" class="header__menu-link">Início</a></li>
+                <li class="header__menu-item"><a href="#" class="header__menu-link">Sobre</a></li>
+                <li class="header__menu-item header__menu-item--dropdown">
+                  <a href="#" class="header__menu-link header__menu-link--dropdown">
+                    Serviços
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                      class="header__dropdown-icon">
+                      <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                  </a>
+                  <ul class="header__dropdown">
+                    <li class="header__dropdown-item"><a href="#descarte-voluntario"
+                        class="header__dropdown-link">Descarte voluntário</a></li>
+                    <li class="header__dropdown-item"><a href="#residencias-condominios"
+                        class="header__dropdown-link">Residências e condomínios</a></li>
+                    <li class="header__dropdown-item"><a href="#lojistas-parceiros" class="header__dropdown-link">Lojistas
+                        e parceiros</a></li>
+                    <li class="header__dropdown-item"><a href="#empresas-industrias"
+                        class="header__dropdown-link">Empresas e indústrias</a></li>
+                  </ul>
+                </li>
+                <li class="header__menu-item"><a href="#" class="header__menu-link">Blog</a></li>
+                <li class="header__menu-item"><a href="https://wa.me/5511953562620" target="_blank" rel="noopener"
+                    class="header__menu-link btn btn--login">Contato</a></li>
+              </ul>
+            </nav>
+            <button class="header__menu-toggle" aria-label="Toggle menu">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                <g class="nc-icon-wrapper" stroke-linecap="square" stroke-linejoin="miter" stroke-width="1.5" fill="none"
+                  stroke="currentColor" stroke-miterlimit="10">
+                  <line x1="1" y1="12" x2="23" y2="12" stroke="currentColor"></line>
+                  <line x1="1" y1="5" x2="23" y2="5"></line>
+                  <line x1="1" y1="19" x2="23" y2="19"></line>
+                </g>
+              </svg>
+            </button>
+          </div>
         </div>
-        <div class="col">
-          <nav class="header__nav">
-            <ul class="header__menu">
-              <li class="header__menu-item"><a href="#" class="header__menu-link">Início</a></li>
-              <li class="header__menu-item"><a href="#" class="header__menu-link">Sobre</a></li>
-              <li class="header__menu-item header__menu-item--dropdown">
-                <a href="#" class="header__menu-link header__menu-link--dropdown">
-                  Serviços
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                    class="header__dropdown-icon">
-                    <polyline points="6 9 12 15 18 9"></polyline>
-                  </svg>
-                </a>
-                <ul class="header__dropdown">
-                  <li class="header__dropdown-item"><a href="#descarte-voluntario"
-                      class="header__dropdown-link">Descarte voluntário</a></li>
-                  <li class="header__dropdown-item"><a href="#residencias-condominios"
-                      class="header__dropdown-link">Residências e condomínios</a></li>
-                  <li class="header__dropdown-item"><a href="#lojistas-parceiros" class="header__dropdown-link">Lojistas
-                      e parceiros</a></li>
-                  <li class="header__dropdown-item"><a href="#empresas-industrias"
-                      class="header__dropdown-link">Empresas e indústrias</a></li>
-                </ul>
-              </li>
-              <li class="header__menu-item"><a href="#" class="header__menu-link">Blog</a></li>
-              <li class="header__menu-item"><a href="https://wa.me/5511953562620" target="_blank" rel="noopener"
-                  class="header__menu-link btn btn--login">Contato</a></li>
-            </ul>
-          </nav>
-          <button class="header__menu-toggle" aria-label="Toggle menu">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-              <g class="nc-icon-wrapper" stroke-linecap="square" stroke-linejoin="miter" stroke-width="1.5" fill="none"
-                stroke="currentColor" stroke-miterlimit="10">
-                <line x1="1" y1="12" x2="23" y2="12" stroke="currentColor"></line>
-                <line x1="1" y1="5" x2="23" y2="5"></line>
-                <line x1="1" y1="19" x2="23" y2="19"></line>
-              </g>
-            </svg>
-          </button>
+      </div>
+    </header>
+  
+    <section class="hero">
+      <div class="hero__overlay"></div>
+      <div class="hero__container container">
+        <div class="row">
+          <div class="col offset-md-1">
+            <h1 class="hero__title mb-3">
+              Transforme<br>
+              seu <span class="brand-text-highlight">lixo eletrônico</span><br>
+              em <span class="brand-icon-highlight">impacto positivo</span>
+            </h1>
+            <p class="hero__lead">
+              Soluções em economia circular,<br> gestão sustentável e<br>tecnologias sustentáveis
+            </p>
+          </div>
         </div>
+      </div>
+    </section>
+
+  </div>
+  <!-- <div class="hero__actions container">
+    <div class="row g-3">
+      <div class="col-6 col-md-3">
+        <button class="btn btn--green w-100">Descarte voluntário</button>
+      </div>
+      <div class="col-6 col-md-3">
+        <button class="btn btn--yellow w-100">Residências e condomínios</button>
+      </div>
+      <div class="col-6 col-md-3">
+        <button class="btn btn--purple w-100">Lojistas e parceiros</button>
+      </div>
+      <div class="col-6 col-md-3">
+        <button class="btn btn--blue w-100">Empresas e indústrias</button>
       </div>
     </div>
-  </header>
-
-
-
-  <section class="hero">
-    <div class="hero__overlay"></div>
-    <div class="hero__container container">
-      <div class="row">
-        <div class="col offset-md-1">
-          <h1 class="hero__title mb-3">
-            Transforme<br>
-            seu <span class="brand-text-highlight">lixo eletrônico</span><br>
-            em <span class="brand-icon-highlight">impacto positivo</span>
-          </h1>
-          <p class="hero__lead">
-            Soluções em economia circular, gestão sustentável e tecnologias sustentáveis
-          </p>
-        </div>
-      </div>
-    </div>
-    <!-- <div class="hero__actions container">
-      <div class="row g-3">
-        <div class="col-6 col-md-3">
-          <button class="btn btn--green w-100">Descarte voluntário</button>
-        </div>
-        <div class="col-6 col-md-3">
-          <button class="btn btn--yellow w-100">Residências e condomínios</button>
-        </div>
-        <div class="col-6 col-md-3">
-          <button class="btn btn--purple w-100">Lojistas e parceiros</button>
-        </div>
-        <div class="col-6 col-md-3">
-          <button class="btn btn--blue w-100">Empresas e indústrias</button>
-        </div>
-      </div>
-    </div> -->
-  </section>
+  </div> -->
 
   <main>
 

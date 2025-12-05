@@ -258,12 +258,12 @@ body {
 }
 
 .header {
-  position: relative;
+  position: absolute;
   top: 0;
   left: 0;
   right: 0;
-  z-index: 1000;
-  padding: $space-300 0;
+  z-index: 2;
+  padding: $space-200 0 0 0;
   transition: all 0.5s ease-in-out;
 
   &.header--fixed {
@@ -275,19 +275,13 @@ body {
   }
 
   &__logo {
-    width: auto;
-    transition: height 0.5s ease-in-out;
+    max-width: clamp(224px, 24vw, 306px);
+    width: 100%;
+    height: auto;
+    transition: max-width 0.5s ease-in-out;
 
     .header--fixed & {
       height: 44px;
-    }
-
-    @media (max-width: 400px) {
-      width: 256px;
-    }
-
-    @media (max-width: 991px) {
-      width: 224px;
     }
   }
 
@@ -504,19 +498,16 @@ body {
 
 .hero {
   position: relative;
-  top: -117px;
-  min-height: calc(100vh - 117px);
+  height: 100vh;
   background-image: url('../images/hero.webp');
   background-size: cover;
   background-position: center;
   color: $gray-1;
-  padding: 117px 0 0 0;
-  margin: 0 0 -116px 0;
+  padding: 0;
 
   &__overlay {
     position: absolute;
     inset: 0;
-    // background: linear-gradient(135deg, rgba(0, 69, 56, 0.85) 0%, rgba(6, 145, 110, 0.75) 50%, rgba(49, 196, 150, 0.65) 100%);
     background: linear-gradient(155deg, rgba(0, 34, 28, 0.85) 5%, rgba(0, 110, 83, 0.85) 65%, rgba(23, 95, 72, 0.55) 100%);
     z-index: 1;
   }
@@ -526,23 +517,25 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-
-    min-height: inherit;
+    padding-top: 88px;
+    height: 100%;
     z-index: 2;
   }
 
   &__title {
+    font-size: clamp(36px, calc(36px + (80 - 36) * ((100vw - 375px) / (1024 - 375))), 4rem);
     font-weight: 700;
     color: $gray-0;
+    line-height: 1;
   }
 
   &__lead {
     color: $gray-0;
-    font-size: clamp(1.5rem, 1rem + 0.8vw, 2.5rem);
+    font-size: clamp(1.2rem, 1rem + 0.8vw, 2rem);
     font-family: $ff-headings;
     font-weight: 700;
     margin-bottom: $space-500;
-    line-height: 1.6;
+    line-height: 1.4;
     margin: 0;
   }
 
@@ -551,13 +544,13 @@ body {
     padding: 1.25em 2em;
   }
 
-  &__actions {
-    position: absolute;
-    bottom: $space-600;
-    left: 0;
-    right: 0;
-    z-index: 2;
-  }
+  // &__actions {
+  //   position: absolute;
+  //   bottom: $space-600;
+  //   left: 0;
+  //   right: 0;
+  //   z-index: 2;
+  // }
 
   @media (max-width: 768px) {
     &__title {
