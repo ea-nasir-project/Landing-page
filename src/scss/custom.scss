@@ -296,7 +296,7 @@ body {
   top: 0;
   left: 0;
   right: 0;
-  z-index: 2;
+  z-index: 3;
   padding: $space-200 0 0 0;
   transition: all 0.5s ease-in-out;
 
@@ -687,6 +687,11 @@ body {
       color: $gray-8;
       line-height: 1.6;
       margin-left: $space-500;
+      width: 50vw;
+
+      @media (max-width: 768px) {
+        width: 100%;
+      }
     }
   }
 
