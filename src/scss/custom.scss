@@ -662,12 +662,25 @@ body {
       color: $green-8;
       margin-bottom: 0;
       padding-bottom: $space-100;
-      text-decoration: underline;
+      // text-decoration: underline;
+
+      &::before {
+        content: '';
+        position: absolute;
+        bottom: 3px;
+        left: 0;
+        width: 100%;
+        max-width: 80vw;
+        margin-right: $space-500;
+        height: 3px;
+        background-color: $green-8;
+        border-radius: $space-50;
+      }
 
       &::after {
         content: '';
         position: absolute;
-        bottom: -6px;
+        bottom: -3px;
         left: 0;
         width: 100%;
         max-width: 80vw;
