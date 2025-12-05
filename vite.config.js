@@ -5,7 +5,14 @@ export default {
   publicDir: resolve(__dirname, 'public'),
   build: {
     outDir: resolve(__dirname, 'dist'),
-    emptyOutDir: true
+    emptyOutDir: true,
+    rollupOptions: {
+      input: {
+        main: resolve(__dirname, "src/index.html"),
+        sobre: resolve(__dirname, "src/sobre.html"),
+        // contato: resolve(__dirname, "pages/contato/index.html")
+      }
+    }
   },
   server: {
     port: 8080
