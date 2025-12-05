@@ -136,8 +136,8 @@ $space-1000: 5rem; // 80px
     box-shadow: 0 6px 12px #0003, 0 1px 1px #0003, inset 0 0 0 1px #0000001a, inset 0 3px 2px -2px #ffffff80;
   }
 
+  &:hover,
   &:focus {
-    outline: 2px solid currentColor;
     outline-offset: 2px;
   }
 
@@ -145,10 +145,10 @@ $space-1000: 5rem; // 80px
     background-color: $green-4;
     color: $green-9;
 
-    &:hover {
+    &:hover,
+    &:focus {
       background-color: $green-3;
       outline: 2px solid $green-3;
-      outline-offset: 2px;
     }
   }
 
@@ -156,10 +156,10 @@ $space-1000: 5rem; // 80px
     background-color: $yellow-4;
     color: $yellow-10;
 
-    &:hover {
+    &:hover,
+    &:focus {
       background-color: $yellow-3;
       outline: 2px solid $yellow-3;
-      outline-offset: 2px;
     }
   }
 
@@ -167,10 +167,10 @@ $space-1000: 5rem; // 80px
     background-color: $purple-4;
     color: $purple-9;
 
-    &:hover {
+    &:hover,
+    &:focus {
       background-color: $purple-3;
       outline: 2px solid $purple-3;
-      outline-offset: 2px;
     }
   }
 
@@ -178,10 +178,10 @@ $space-1000: 5rem; // 80px
     background-color: $blue-4;
     color: $blue-9;
 
-    &:hover {
+    &:hover,
+    &:focus {
       background-color: $blue-3;
       outline: 2px solid $blue-3;
-      outline-offset: 2px;
     }
   }
 
@@ -191,11 +191,11 @@ $space-1000: 5rem; // 80px
     outline: 2px solid $green-5;
     outline-offset: 2px;
 
-    &:hover {
+    &:hover,
+    &:focus {
       background-color: $green-4;
       color: $green-9 !important;
       outline: 2px solid $green-4;
-      outline-offset: 2px;
     }
   }
 
@@ -900,6 +900,24 @@ body {
       aspect-ratio: 1 / 1;
       object-fit: cover;
       border-radius: $space-100;
+    }
+
+    &--shopkeeper {
+      img {
+        outline: 4px solid $purple-4;
+      }
+    }
+
+    &--companies {
+      img {
+        outline: 4px solid $blue-4;
+      }
+    }
+
+    &--composting {
+      img {
+        outline: 4px solid $yellow-4;
+      }
     }
   }
 }
