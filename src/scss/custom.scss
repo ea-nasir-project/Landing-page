@@ -280,11 +280,6 @@ body {
     font-size: clamp(0.9rem, 0.85rem + 0.4vw, 1.25rem); // ~14px -> 20px
   }
 
-  p {
-    padding-left: $space-500;
-  }
-
-
   section {
     padding-top: $space-800;
     padding-bottom: $space-800;
@@ -687,6 +682,7 @@ body {
       color: $gray-8;
       line-height: 1.6;
       width: 50vw;
+      padding-left: $space-500;
 
       @media (max-width: 768px) {
         width: 100%;
@@ -797,6 +793,12 @@ body {
     background-size: 100%;
     background-repeat: no-repeat;
     z-index: -1;
+  }
+
+  &__content {
+    &-para {
+      padding-left: $space-500;
+    }
   }
 
   &__card {
